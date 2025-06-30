@@ -1,0 +1,63 @@
+==========================================
+||               JANJI                  ||
+==========================================
+Saya Nuansa Bening Aura Jelita dengan NIM 2301410 mengerjakan evaluasi 
+Tugas Masa Depan dalam mata kuliah Desain dan Pemrograman Berorientasi Objek 
+untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
+
+==========================================
+||          CREDIT ASSETS               ||
+==========================================
+
+1. Asset Portal dan Glyph Ball oleh @klyaksun di canva 
+2. Asset Penyihir oleh Lucas Godoy @pixelgodoy (https://x.com/pixelgodoy/status/1889306862215913814)
+3. Karakter Evil Wizard 1 oleh Warren Clark (https://lionheart963.itch.io/wizard) 
+4. Karakter Evil Wizard 2 oleh Luiz Melo (https://luizmelo.itch.io/evil-wizard)
+
+==========================================
+||       KOMPILASI & MENJALANKAN        ||
+==========================================
+
+[LANGKAH 1] Menghapus folder 'bin' lama jika ada
+rm -rf bin
+
+[LANGKAH 2] Membuat folder 'bin' baru
+mkdir bin
+
+[LANGKAH 3] Menyalin folder 'assets' dari 'src' ke dalam 'bin'
+xcopy src\assets bin\assets /s /i /y
+
+[LANGKAH 4] Memulai kompilasi tahap demi tahap
+Mengompilasi paket 'utils'
+javac -d bin -cp 'lib/*' src/utils/*.java
+
+Mengompilasi paket 'model'
+javac -d bin -cp 'lib/*' src/model/*.java
+
+Mengompilasi paket 'database'
+javac -d bin -cp 'lib/*' src/database/*.java
+
+Mengompilasi paket 'viewmodel'
+javac -d bin -cp 'lib/*' src/viewmodel/*.java
+
+Mengompilasi paket 'view'
+javac -d bin -cp 'bin:lib/*' src/view/*.java
+
+Mengompilasi 'Main.java'
+javac -d bin -cp 'bin:lib/*' src/Main.java
+
+[LANGKAH 5] Menjalankan Program
+java -cp "bin;lib/*" Main
+
+
+[KESELURUHAN]
+rm -rf bin
+mkdir bin
+xcopy src\assets bin\assets /s /i /y
+javac -d bin -cp "lib/*" src/utils/*.java
+javac -d bin -cp "bin;lib/*" src/model/*.java
+javac -d bin -cp "bin;lib/*" src/database/*.java
+javac -d bin -cp "bin;lib/*" src/viewmodel/*.java
+javac -d bin -cp "bin;lib/*" src/view/*.java
+javac -d bin -cp "bin;lib/*" src/Main.java
+java -cp "bin;lib/*" Main
